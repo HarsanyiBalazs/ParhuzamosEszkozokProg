@@ -9,33 +9,6 @@ const char* kernel_code =
     "}\n"
 ;
 
-/*
-    "   if (get_global_id(0) < n) {\n"
-    "       buffer[get_global_id(0)] = 11;\n"
-    "   }\n"
-*/
-
-/*
-const char* kernel_code =
-    "__kernel void hello_kernel(__global int* buffer, int n) {\n"
-    "   if (get_global_id(0) < n) {\n"
-    "       buffer[get_global_id(0)] = get_global_id(0) * 10;\n"
-    "   }\n"
-    "}\n"
-;
-*/
-
-/*
-const char* kernel_code =
-    "__kernel void hello_kernel(__global int* buffer, int n) {\n"
-    "   if (get_global_id(0) % 2 == 0) {\n"
-    "       buffer[get_global_id(0)] = 11;\n"
-    "   } else {\n"
-    "       buffer[get_global_id(0)] = 22;\n"
-    "   }\n"
-    "}\n"
-;*/
-
 
 const int SAMPLE_SIZE = 1000;
 
@@ -164,7 +137,7 @@ int main(void)
     );
 
     for (i = 0; i < SAMPLE_SIZE; ++i) {
-        printf("[%d] = %d, ", i, host_buffer3[i]);
+        printf("[%d] = %f, ", i, host_buffer3[i]);
     }
 
     // Release the resources
